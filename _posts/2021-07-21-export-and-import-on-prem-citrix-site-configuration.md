@@ -9,7 +9,7 @@ image: "/img/title_powershell.jpg"
 thumbnail: "/img/title_powershell.jpg"
 published: true 
 tags: Citrix XenApp XenDesktop Virtual Apps and Desktops DaaS Powershell Migration Script LTSR 1912 7.15
-permalink: "export-and-import-on-prem-citrix-site-configuration"
+permalink: "export-and-import-on-prem-citrix-site-configuration/"
 categories: Citrix Powershell Migration  
 ---
 

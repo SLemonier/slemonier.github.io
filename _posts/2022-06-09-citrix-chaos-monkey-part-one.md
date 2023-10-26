@@ -9,7 +9,7 @@ image: "/img/title_citrixchaosmonkey.jpg"
 thumbnail: "/img/title_citrixchaosmonkey.jpg"
 published: true 
 tags: Citrix Chaos Monkey Chaos Engineering
-permalink: "citrix-chaos-monkey-part-one"
+permalink: "citrix-chaos-monkey-part-one/"
 categories: Citrix Chaos Monkey Chaos Engineering
 ---
 

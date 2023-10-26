@@ -9,7 +9,7 @@ image: "/img/title_fslogix.png"
 thumbnail: "/img/title_fslogix.png"
 published: true 
 tags: FSLogix Profile Container Application crashing Troubleshooting
-permalink: "fslogix-profile-container-applications-crashing"
+permalink: "fslogix-profile-container-applications-crashing/"
 categories: FSLogix Troubleshooting
 ---
 
