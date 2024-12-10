@@ -1,0 +1,389 @@
+<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/_astro/favicon.CpNGb_Q3.png"><meta name="generator" content="Astro v4.16.0"><!-- Canonical URL --><link rel="canonical" href="https://devolio.devaradise.com/provision-new-vms-in-an-mcs-catalog-with-powershell/"><!-- Primary Meta Tags --><title>Provision new VMs in an MCS catalog with Powershell</title><meta name="title" content="Provision new VMs in an MCS catalog with Powershell"><meta name="description" content="Provision new VMs in an MCS catalog with Powershell."><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://devolio.devaradise.com/provision-new-vms-in-an-mcs-catalog-with-powershell/"><meta property="og:title" content="Provision new VMs in an MCS catalog with Powershell"><meta property="og:description" content="Provision new VMs in an MCS catalog with Powershell."><meta property="og:image" content="https://devolio.devaradise.com/_astro/title_powershell.B_-WyO3_.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://devolio.devaradise.com/provision-new-vms-in-an-mcs-catalog-with-powershell/"><meta property="twitter:title" content="Provision new VMs in an MCS catalog with Powershell"><meta property="twitter:description" content="Provision new VMs in an MCS catalog with Powershell."><meta property="twitter:image" content="https://devolio.devaradise.com/_astro/title_powershell.B_-WyO3_.jpg"><link rel="stylesheet" href="/_astro/_slug_.DwNs2Nve.css">
+<style>.toc-list[data-astro-cid-awg4b4gg]::-webkit-scrollbar{width:5px}.toc-list[data-astro-cid-awg4b4gg]::-webkit-scrollbar-track{background:transparent}.toc-list[data-astro-cid-awg4b4gg]::-webkit-scrollbar-thumb{background:#eee;border-radius:5px}.dark .toc-list[data-astro-cid-awg4b4gg]::-webkit-scrollbar-thumb{background:#2e2e2e;border-radius:5px}
+</style><script>!(function(w,p,f,c){if(!window.crossOriginIsolated && !navigator.serviceWorker) return;c=w[p]=Object.assign(w[p]||{},{"lib":"/~partytown/","debug":false});c[f]=(c[f]||[])})(window,'partytown','forward');/* Partytown 0.10.2 - MIT builder.io */
+const t={preserveBehavior:!1},e=e=>{if("string"==typeof e)return[e,t];const[n,r=t]=e;return[n,{...t,...r}]},n=Object.freeze((t=>{const e=new Set;let n=[];do{Object.getOwnPropertyNames(n).forEach((t=>{"function"==typeof n[t]&&e.add(t)}))}while((n=Object.getPrototypeOf(n))!==Object.prototype);return Array.from(e)})());!function(t,r,o,i,a,s,c,d,l,p,u=t,f){function h(){f||(f=1,"/"==(c=(s.lib||"/~partytown/")+(s.debug?"debug/":""))[0]&&(l=r.querySelectorAll('script[type="text/partytown"]'),i!=t?i.dispatchEvent(new CustomEvent("pt1",{detail:t})):(d=setTimeout(v,1e4),r.addEventListener("pt0",w),a?y(1):o.serviceWorker?o.serviceWorker.register(c+(s.swPath||"partytown-sw.js"),{scope:c}).then((function(t){t.active?y():t.installing&&t.installing.addEventListener("statechange",(function(t){"activated"==t.target.state&&y()}))}),console.error):v())))}function y(e){p=r.createElement(e?"script":"iframe"),t._pttab=Date.now(),e||(p.style.display="block",p.style.width="0",p.style.height="0",p.style.border="0",p.style.visibility="hidden",p.setAttribute("aria-hidden",!0)),p.src=c+"partytown-"+(e?"atomics.js?v=0.10.2":"sandbox-sw.html?"+t._pttab),r.querySelector(s.sandboxParent||"body").appendChild(p)}function v(n,o){for(w(),i==t&&(s.forward||[]).map((function(n){const[r]=e(n);delete t[r.split(".")[0]]})),n=0;n<l.length;n++)(o=r.createElement("script")).innerHTML=l[n].innerHTML,o.nonce=s.nonce,r.head.appendChild(o);p&&p.parentNode.removeChild(p)}function w(){clearTimeout(d)}s=t.partytown||{},i==t&&(s.forward||[]).map((function(r){const[o,{preserveBehavior:i}]=e(r);u=t,o.split(".").map((function(e,r,o){var a;u=u[o[r]]=r+1<o.length?u[o[r]]||(a=o[r+1],n.includes(a)?[]:{}):(()=>{let e=null;if(i){const{methodOrProperty:n,thisObject:r}=((t,e)=>{let n=t;for(let t=0;t<e.length-1;t+=1)n=n[e[t]];return{thisObject:n,methodOrProperty:e.length>0?n[e[e.length-1]]:void 0}})(t,o);"function"==typeof n&&(e=(...t)=>n.apply(r,...t))}return function(){let n;return e&&(n=e(arguments)),(t._ptf=t._ptf||[]).push(o,arguments),n}})()}))})),"complete"==r.readyState?h():(t.addEventListener("DOMContentLoaded",h),t.addEventListener("load",h))}(window,document,navigator,top,window.crossOriginIsolated);;(e=>{e.addEventListener("astro:before-swap",e=>{let r=document.body.querySelector("iframe[src*='/~partytown/']");if(r)e.newDocument.body.append(r)})})(document);</script></head> <body class="bg-white dark:bg-zinc-900 dark:text-zinc-100 pt-16 sm:pt-0"> <header id="site-header" class="flex items-center w-full transition duration-300 z-[999] border-[var(--soft-border-color)]"> <div class="container"> <nav class="flex gap-4 items-center justify-between py-3"> <h2 class="m-0"> <a href="/" class="flex gap-4 items-center text-xl font-black uppercase"> <!-- You can use your site logo, rounded ava or simply your site name here--> <img src="/_astro/small-ava.nMcaqXHj_Z1y66Kx.webp" alt="Your site name" class="rounded-full w-11 border-white border-2 shadow-lg" width="96" height="96" loading="lazy" decoding="async"> <!-- {SITE_TITLE} --> </a> </h2> <div class="flex"> <button class="p-3" id="themeToggle" aria-label="Theme mode"> <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg> <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"> <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg> </button> </div> </nav> <div class="fixed top-3 w-auto max-w-full px-3 left-1/2 -translate-x-1/2 z-[999]"> <div class="flex px-2.5 bg-white/90 dark:bg-zinc-900/75 backdrop-blur-md leading-tight rounded-full border dark:border-zinc-700"> <div class="px-2.5 text-sm"> <a href="/" class="py-3 flex items-center text-zinc-600 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-zinc-50" aria-label="Home">  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>  </a> </div> <div class="px-2.5 text-sm"> <a href="/about/" class="py-3 flex items-center text-zinc-600 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-zinc-50"> About </a> </div><div class="px-2.5 text-sm"> <a href="/posts/" class="py-3 flex items-center text-zinc-600 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-zinc-50"> Posts </a> </div><div class="px-2.5 text-sm"> <a href="/projects/" class="py-3 flex items-center text-zinc-600 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-zinc-50"> Projects </a> </div><div class="px-2.5 text-sm"> <a href="/tags/" class="py-3 flex items-center text-zinc-600 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-zinc-50"> Tags </a> </div> </div> </div> </div>  <script>
+		const theme = (() => {
+			if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				return 'dark';
+			}
+			if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+				return localStorage.getItem('theme');
+			}
+			return 'light';
+		})();
+
+		if (theme === 'light') {
+			document.documentElement.classList.remove('dark');
+		} else {
+			document.documentElement.classList.add('dark');
+		}
+
+		window.localStorage.setItem('theme', theme || '');
+
+		function sendMessage(message) {
+			const iframe = document.querySelector('iframe.giscus-frame');
+			if (!iframe) return;
+			iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+		}
+
+		const handleToggleClick = () => {
+			const element = document.documentElement;
+			element.classList.toggle('dark');
+
+			const isDark = element.classList.contains('dark');
+			if (isDark) {
+				sendMessage({
+					setConfig: {
+						theme: 'dark_dimmed'
+					}
+				});
+			} else {
+				sendMessage({
+					setConfig: {
+						theme: 'light'
+					}
+				});
+			}
+			localStorage.setItem('theme', isDark ? 'dark' : 'light');
+		};
+		document.getElementById('themeToggle')?.addEventListener('click', handleToggleClick);
+	</script> </header> <div class="py-8 min-h-[calc(100vh-160px)]">  <div class="container lg:flex gap-10"> <main class="overflow-hidden grow"> <article> <div class="prose dark:prose-invert
+  prose-h1:font-[900] prose-h1:my-4 prose-h1:text-2xl sm:prose-h1:text-[2rem]/[1.3]
+  prose-h2:mt-6 prose-h2:mb-3 prose-h2:text-2xl sm:prose-h2:text-3xl prose-h2:font-extrabold
+  prose-h3:mt-5 prose-h3:mb-2 prose-h3:text-xl sm:prose-h3:text-2xl
+  prose-h4:mt-3 prose-h4:mb-0 prose-img:rounded-xl prose-h3:target:pt-20">  <div> <h1 class="!my-1 leading-tight">Provision new VMs in an MCS catalog with Powershell</h1> <div class="text-sm font-[500] mt-2 sm:mt-0 py-1 md:text-right flex flex-col sm:flex-row gap-3 sm:justify-between sm:items-center"> <div class="flex gap-2"> <a class="border border-zinc-300 dark:border-zinc-700 rounded-2xl
+                          text-sm text-zinc-700 dark:text-zinc-300 no-underline px-2 py-0.5
+                          transition-all duration-700
+                        hover:border-zinc-700 dark:hover:border-zinc-300" href="/tags/powershell"> PowerShell </a><a class="border border-zinc-300 dark:border-zinc-700 rounded-2xl
+                          text-sm text-zinc-700 dark:text-zinc-300 no-underline px-2 py-0.5
+                          transition-all duration-700
+                        hover:border-zinc-700 dark:hover:border-zinc-300" href="/tags/citrix"> Citrix </a><a class="border border-zinc-300 dark:border-zinc-700 rounded-2xl
+                          text-sm text-zinc-700 dark:text-zinc-300 no-underline px-2 py-0.5
+                          transition-all duration-700
+                        hover:border-zinc-700 dark:hover:border-zinc-300" href="/tags/daas"> DaaS </a><a class="border border-zinc-300 dark:border-zinc-700 rounded-2xl
+                          text-sm text-zinc-700 dark:text-zinc-300 no-underline px-2 py-0.5
+                          transition-all duration-700
+                        hover:border-zinc-700 dark:hover:border-zinc-300" href="/tags/automation"> Automation </a> </div> <div> Updated on <strong><time datetime="2020-11-13T00:00:00.000Z"> Nov 13, 2020 </time></strong> </div> </div> </div> <div class="py-3 overflow-hidden"> <img src="/_astro/title_powershell.B_-WyO3__MpOyi.webp" class="rounded-3xl w-full m-0 lg:mb-2" alt="Provision new VMs in an MCS catalog with Powershell" loading="eager" width="2000" height="1500" decoding="async"> </div> <p>During a migration lasting several months and requiring to provision on a regular basis new VDI, I had to create several times a week new machines in two different MCS catalogs (one in each of our datacenters) in order to add them to the delivery group and have more.</p>
+<p>It is actually not a “big deal” but each time I face a task I have to do several times a day, a week, a month, I try to automatize it in PowerShell, even if it is something that requires less than a minute to do so. We never know which difficulty we may face during the scripting phase and there is always something new to learn, either about writing the script or about the infrastructure itself.</p>
+<p>To be fair, I first thought a Citrix cmdlet would have offer a simple way to provision new VMs in an MCS catalog (I never gave a look at the PowerShell’s tab in the Studio). But it was not the case and provisioning new VMs requires actually a few steps in order to complete such task. And as my most preferred assistant did not find something really dynamic, and I mean in the target delivery group, the number of VMs to create, for an existing catalog (some script exist but create the catalog and the delivery group from scratch), I had to do it on my own. Such a shame, right? 😊</p>
+<p>I first started by doing it through the console, to have the step in mind and to follow them as I was scripting (like to avoid trying to add machines in a delivery group before creating them on hosting side for example…) and also to have some of the commands in this very helpful PowerShell’s tab.</p>
+<p>I discovered you must:</p>
+<ul>
+<li>Find the Identity Pool to create machine account on Active Directory</li>
+<li>Create the machine account</li>
+<li>Provision the VM</li>
+<li>Add the VM to the catalog</li>
+<li>And finally add the machine to the delivery group</li>
+</ul>
+<p>All these steps are hidden behind the “Add machine” wizard which I never understood why it keeps asking for the naming convention and the target OU prior to the creation of new VMs. I mean, we set this at the catalog’s creation… I could understand the purpose of confirming these parameters but if I want to use another naming convention or OU, I could simply create a new catalog, isn’t it?</p>
+<p>Of course, between those steps, there are some parameters to gather to talk to the correct resource (like the Provisioning Scheme or the catalog ID for instance). Adding some steps to complete in order to provision new machines. To be honest, I started to write a script with static IDs only matching my configuration and then, I thought it could help some of you and I worked to have it entirely useable on any infrastructure, based on parameter to provide to the script.</p>
+<p>First, I started slowly, create X number of machines in a single catalog and add them a delivery group:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>.\VDI_Provisionning.ps1 -VDICount 10 -Catalog "Windows10" -DeliveryGroup "Desktop"</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>Then, I added the capability to manage several catalogs (remember, we have two datacenters, but it could work with as many as you might want):</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>.\VDI_Provisionning.ps1 -VDICount 10 -Catalog "DTC1","DTC2" -DeliveryGroup "Desktop"</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>I thought about a -Split parameter in order to create the same number of VDI in each catalog. It takes the count and divide by the number of catalogs set in parameter (and return a natural number of course for the little smart guy who wanted to try with an odd number) :</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>.\VDI_Provisionning.ps1 -VDICount 10 -Catalog "DTC1","DTC2" -Split -DeliveryGroup "Desktop"</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>Finally I added some additional switches to allow the script to be run on a computer that is not a delivery controller and to specify an output file for the log (by default, it transcripts in a file in current directory):</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>.\VDI_Provisionning.ps1 -DeliveryController "CTXDDC01" -VDICount 10 -Catalog "Windows10" -DeliveryGroup "Desktop" -Log "C:\temp\test.log"</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>The script starts by checking all those parameters and the connection with the delivery controller before doing anything. I’d rather spend time to check first than start processing and ending up with some orphaned objects (and having hard time to clean up the mess, sounds like a true story, right? 😰).</p>
+<p>Funny thing, it requires more lines to check the parameters than to create the machine! I guess I was dedicated to not break your configuration!</p>
+<p>If you give a close look, you may notice the script pauses before adding the VM(s) to the catalog because I faced some issue when adding the virtual machine to the catalog on one delivery controller and not the other. I then remembered that there is a most preferred delivery controller to talk to the hosting infrastructure:</p>
+<p><img  src="/_astro/PreferredController.DvNfsyUs_Z1Q5Yzk.webp" alt="Preferred Controller" width="614" height="229" loading="lazy" decoding="async"></p>
+<p>And when you are not talking to the most preferred one when using Citrix cmdlets, the other delivery controllers could not have up-to-date information before a few seconds. Thus, I added 10 seconds sleep, could have been less but I’d rather to be safe. Also, always first test your script in DEV and then on all your delivery controllers!
+And once it has done, here is how it looks:</p>
+<p><img  src="/_astro/result.C7VK56Re_Z14e21U.webp" alt="Result" width="844" height="495" loading="lazy" decoding="async"></p>
+<p>Pretty cool, huh?</p>
+<blockquote>
+<p>Enough talking! Where is the script?!</p>
+</blockquote>
+<p>Alright, alright, you’ll find the latest version on Github, feel free to share your comments, your improvment’s ideas or custom it your way!</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>&#x3C;#</span></span>
+<span class="line"><span> .Synopsis</span></span>
+<span class="line"><span> Provision a given number of VM(s) in one or more MCS catalog(s) and assign the VM(s) to a delivery group.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> .Description</span></span>
+<span class="line"><span> Provision a given number of VM(s).</span></span>
+<span class="line"><span> This script supports to provision in several MCS catalogs.</span></span>
+<span class="line"><span> It also supports to attach the newly created VM(s) to a delivery group (only one is supported).</span></span>
+<span class="line"><span> Finally, you can specify to split equally the VM(s) to provision into different MCS catalogs (optionnal).</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> .Parameter DeliveryController</span></span>
+<span class="line"><span> Specifiy the Delivery Controller to use for the provision</span></span>
+<span class="line"><span> This parameter is optionnal, by default it will use with the local machine.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> .Parameter VDICount</span></span>
+<span class="line"><span> Specify how much VM(s) to provision (integer).</span></span>
+<span class="line"><span> This parameter is mandatory.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> .Parameter Catalog</span></span>
+<span class="line"><span> Specify a list of MCS catalogs to provision the VM(s) to.</span></span>
+<span class="line"><span> This parameter is mandatory.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> .Parameter Split</span></span>
+<span class="line"><span> Split equally the number of VM(s) to provision into the MCS catalogs provided with -Catalog parameter.</span></span>
+<span class="line"><span> This paramater is optionnal.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> .Parameter DeliveryGroup</span></span>
+<span class="line"><span> Specifiy the DesktopGroup to attach to the newly created VM(s).</span></span>
+<span class="line"><span> This parameter is mandatory.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> .Parameter Log</span></span>
+<span class="line"><span> Specifiy the output file for the logs.</span></span>
+<span class="line"><span> This parameter is optionnal, by default, it will create a file in the current directory.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> .Example</span></span>
+<span class="line"><span> # Provision 10 VMs to the "Windows 10" catalog and assign them to the "Desktop" delivery group.</span></span>
+<span class="line"><span> VDI_Provisionning.ps1 -VDICount 10 -Catalog "Windows10" -DeliveryGroup "Desktop"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> .Example</span></span>
+<span class="line"><span> # Connect to "CTXDDC01" to provision 10 VMs to the "Windows 10" catalog and assign them to the "Desktop" delivery group.</span></span>
+<span class="line"><span> VDI_Provisionning.ps1 -DeliveryController "CTXDDC01" -VDICount 10 -Catalog "Windows10" -DeliveryGroup "Desktop"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.Example</span></span>
+<span class="line"><span> # Provision 10 VMs to the "DTC1" and "DTC2" catalogs    and assign them to the "Desktop" delivery group.</span></span>
+<span class="line"><span> VDI_Provisionning.ps1 -VDICount 10 -Catalog "DTC1","DTC2" -DeliveryGroup "Desktop"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> .Example</span></span>
+<span class="line"><span> # Provision 5 (10 split equally between two catalogs) VMs to the "DTC1" and "DTC2" catalogs, assign them </span></span>
+<span class="line"><span> to the "Desktop" delivery group and log the output in C:\Temp</span></span>
+<span class="line"><span> VDI_Provisionning.ps1 -VDICount 10 -Catalog "DTC1","DTC2" -Split -DeliveryGroup "Desktop" -Log "C:\temp\test.log"</span></span>
+<span class="line"><span>#></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>[CmdletBinding()]</span></span>
+<span class="line"><span>Param(</span></span>
+<span class="line"><span>    # Declaring input variables for the script</span></span>
+<span class="line"><span>    [Parameter(Mandatory=$false)] [string]$DeliveryController,</span></span>
+<span class="line"><span>    [Parameter(Mandatory=$true)] [int]$VDICount,</span></span>
+<span class="line"><span>    [Parameter(Mandatory=$true)] [string[]]$Catalog,</span></span>
+<span class="line"><span>    [Parameter(Mandatory=$false)] [switch]$Split,</span></span>
+<span class="line"><span>    [Parameter(Mandatory=$true)] [string]$DeliveryGroup,</span></span>
+<span class="line"><span>    [Parameter(Mandatory=$false)][ValidateNotNullOrEmpty()] [string]$LogFile=".\VDI_Provisionning.log"</span></span>
+<span class="line"><span>)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>#Start logging</span></span>
+<span class="line"><span>Start-Transcript -Path $LogFile</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>#Setting variables prior to their usage is not mandatory</span></span>
+<span class="line"><span>Set-StrictMode -Version 2</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>#Check Snapin can be loaded</span></span>
+<span class="line"><span>#Could be improved by only loading the necessary modules but it would not be compatible with version older than 1912</span></span>
+<span class="line"><span>Write-Host "Loading Citrix Snapin... " -NoNewline</span></span>
+<span class="line"><span>if(!(Add-PSSnapin Citrix* -ErrorAction SilentlyContinue -PassThru )){</span></span>
+<span class="line"><span>    Write-Host "Failed" -ForegroundColor Red</span></span>
+<span class="line"><span>    Write-Host "Citrix Snapin cannot be loaded. Please, check the component is installed on the computer." -ForegroundColor Red</span></span>
+<span class="line"><span>    #Stop logging</span></span>
+<span class="line"><span>    Stop-Transcript </span></span>
+<span class="line"><span>    break</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>Write-Host "OK" -ForegroundColor Green</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>################################################################################################</span></span>
+<span class="line"><span>#Checking the parameters</span></span>
+<span class="line"><span>################################################################################################</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>#Check if the DeliveryController parameter is set or if it has to use the local machine</span></span>
+<span class="line"><span>if($DeliveryController){</span></span>
+<span class="line"><span>    #Check if the parameter is a FQDN or not</span></span>
+<span class="line"><span>    Write-Host "Trying to contact the Delivery Controller $DeliveryController... " -NoNewline</span></span>
+<span class="line"><span>    if($DeliveryController -contains "."){</span></span>
+<span class="line"><span>        $DDC = Get-BrokerController -DNSName "$DeliveryController"</span></span>
+<span class="line"><span>    } else {</span></span>
+<span class="line"><span>        $DDC = Get-BrokerController -DNSName "$DeliveryController.$env:USERDNSDOMAIN"</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>} else {</span></span>
+<span class="line"><span>    Write-Host "Trying to contact the Delivery Controller $env:COMPUTERNAME... " -NoNewline</span></span>
+<span class="line"><span>    $DDC = Get-BrokerController -DNSName "$env:COMPUTERNAME.$env:USERDNSDOMAIN"</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>if(($DDC)){</span></span>
+<span class="line"><span>    Write-Host "OK" -ForegroundColor Green</span></span>
+<span class="line"><span>} else {</span></span>
+<span class="line"><span>    Write-Host "Failed" -ForegroundColor Red</span></span>
+<span class="line"><span>    Write-Host "Cannot contact the Delivery Controller. Please, check the role is installed on the target computer and your account is allowed to communicate with it." -ForegroundColor Red</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>#Check if the catalog(s) exist(s)</span></span>
+<span class="line"><span>$errorcount = 0</span></span>
+<span class="line"><span>$catalogcount = 0</span></span>
+<span class="line"><span>foreach($cat in $Catalog){</span></span>
+<span class="line"><span>    $catalogcount++</span></span>
+<span class="line"><span>    Write-Host "Checking the catalog $cat... " -NoNewline</span></span>
+<span class="line"><span>    if(Get-BrokerCatalog -AdminAddress $DeliveryController -Name $cat -ErrorAction Ignore){</span></span>
+<span class="line"><span>        Write-Host "OK" -ForegroundColor Green</span></span>
+<span class="line"><span>        Write-Host "Is it an MCS catalog? " -NoNewline</span></span>
+<span class="line"><span>        if((Get-BrokerCatalog -AdminAddress $DeliveryController -Name $cat).ProvisioningType -eq "MCS"){</span></span>
+<span class="line"><span>            Write-host "Yes" -ForegroundColor Green</span></span>
+<span class="line"><span>        } else {</span></span>
+<span class="line"><span>            Write-Host "No" -ForegroundColor Red</span></span>
+<span class="line"><span>            Write-Host "$cat is not an MCS catalog." -ForegroundColor Red</span></span>
+<span class="line"><span>            $errorcount++</span></span>
+<span class="line"><span>        }</span></span>
+<span class="line"><span>    } else {</span></span>
+<span class="line"><span>        Write-Host "Failed." -ForegroundColor Red</span></span>
+<span class="line"><span>        Write-Host "Cannot find catalog $cat." -ForegroundColor Red</span></span>
+<span class="line"><span>        $errorcount++</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>#If one or more catalog(s) got an error, stop processing</span></span>
+<span class="line"><span>if($errorcount -ne 0){</span></span>
+<span class="line"><span>    Write-Host "One of the catalog does not exist or is not an MCS catalog. Please, check there is no mistype, the catalog(s) exist(s), or it is an MCS catalog before continuing." -ForegroundColor Red</span></span>
+<span class="line"><span>    Stop-Transcript </span></span>
+<span class="line"><span>    break</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>#Check if the VDICount can be split equally when -Split is set</span></span>
+<span class="line"><span>if($Split){</span></span>
+<span class="line"><span>    $continue = ""</span></span>
+<span class="line"><span>    Write-Host "Checking VDICount can be split equally between the catalogs... " -NoNewline</span></span>
+<span class="line"><span>    if($VDICount%$catalogcount){</span></span>
+<span class="line"><span>        Write-Host "No" -ForegroundColor Yellow</span></span>
+<span class="line"><span>        while ($continue -notlike "y" -and $continue -notlike "n") {</span></span>
+<span class="line"><span>            $continue = Read-Host "VDICount cannot be split equally between the catalogs. Do you want to continue and split unevenly between the catalogs? Y/N"</span></span>
+<span class="line"><span>        }</span></span>
+<span class="line"><span>        if($continue -match "y"){</span></span>
+<span class="line"><span>            $VDICount = [math]::Floor($VDICount/$catalogcount)</span></span>
+<span class="line"><span>            Write-Host "Based on the parameter and the number of catalogs, $VDICount VM(s) will be created in each catalog." -ForegroundColor Yellow</span></span>
+<span class="line"><span>            $continue = "" #reset continue for next question</span></span>
+<span class="line"><span>            while ($continue -notlike "y" -and $continue -notlike "n") {</span></span>
+<span class="line"><span>                $continue = Read-Host "Do you want to continue? Y/N"</span></span>
+<span class="line"><span>            }</span></span>
+<span class="line"><span>            if($continue -notmatch "y"){</span></span>
+<span class="line"><span>                Write-Host "Execution ended by the user." -ForegroundColor Yellow</span></span>
+<span class="line"><span>                Stop-Transcript </span></span>
+<span class="line"><span>                break</span></span>
+<span class="line"><span>            }</span></span>
+<span class="line"><span>        } else {</span></span>
+<span class="line"><span>            Write-Host "Execution ended by the user." -ForegroundColor Yellow</span></span>
+<span class="line"><span>            Stop-Transcript </span></span>
+<span class="line"><span>            break</span></span>
+<span class="line"><span>        }</span></span>
+<span class="line"><span>    } else {</span></span>
+<span class="line"><span>        Write-Host "OK" -ForegroundColor Green</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>#Check if the Delivery Group exists</span></span>
+<span class="line"><span>Write-Host "Checking the Delivery Group $DeliveryGroup..." -NoNewline</span></span>
+<span class="line"><span>if(Get-BrokerDesktopGroup -AdminAddress $DeliveryController -Name $DeliveryGroup -ErrorAction Ignore){</span></span>
+<span class="line"><span>    Write-Host "OK" -ForegroundColor Green</span></span>
+<span class="line"><span>} else {</span></span>
+<span class="line"><span>    Write-Host "Failed." -ForegroundColor Red</span></span>
+<span class="line"><span>    Write-Host "Cannot find Delivery Group $DeliveryGroup." -ForegroundColor Red</span></span>
+<span class="line"><span>    Stop-Transcript </span></span>
+<span class="line"><span>    break</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Write-Host "All the parameters were validated. Continue processing..." -ForegroundColor Green</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>#reset some variables</span></span>
+<span class="line"><span>$errorcount = 0</span></span>
+<span class="line"><span>$count = 0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>################################################################################################</span></span>
+<span class="line"><span>#Let the fun begin</span></span>
+<span class="line"><span>################################################################################################</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>foreach($cat in $Catalog){</span></span>
+<span class="line"><span>    Write-Host "Starting provisionning of $VDICount VM(s) in $cat" -ForegroundColor Yellow</span></span>
+<span class="line"><span>    #Find IdentityPool for naming convention, OU settings of the Catalog</span></span>
+<span class="line"><span>    Write-Host "Getting IdentityPool... " -NoNewline</span></span>
+<span class="line"><span>    $IdentityPool = (Get-AcctIdentityPool -IdentityPoolName $cat).IdentityPoolUid.Guid</span></span>
+<span class="line"><span>    Write-Host "$IdentityPool found" -ForegroundColor Green</span></span>
+<span class="line"><span>    #Creating the account in AD and in the IndentityPool</span></span>
+<span class="line"><span>    Write-Host "Creating account(s)... " -NoNewline</span></span>
+<span class="line"><span>    $adAccounts = New-AcctADAccount -Count $VDICount -IdentityPoolUid $IdentityPool -ErrorAction Stop</span></span>
+<span class="line"><span>    Write-Host "OK" -ForegroundColor Green</span></span>
+<span class="line"><span>    #Creating the VM(s) using the name(s) list from the previous command</span></span>
+<span class="line"><span>    Write-Host "Creating the virtual machine(s)... " -NoNewline</span></span>
+<span class="line"><span>    $provTaskId = New-ProvVM -AdAccountName @($adAccounts.SuccessfulAccounts) -ProvisioningSchemeName $cat -RunAsynchronously -ErrorAction Stop</span></span>
+<span class="line"><span>    #Display a progress bar in case of large number of VMs creation</span></span>
+<span class="line"><span>    $provtask = Get-ProvTask -TaskId $provTaskId</span></span>
+<span class="line"><span>    $totalpercent = 0</span></span>
+<span class="line"><span>    While($provtask.Active -eq $true){</span></span>
+<span class="line"><span>        try {</span></span>
+<span class="line"><span>            $totalpercent = If ($provTask.TaskProgress) {$provTask.TaskProgress} else {0}</span></span>
+<span class="line"><span>        }</span></span>
+<span class="line"><span>        catch {</span></span>
+<span class="line"><span>        }</span></span>
+<span class="line"><span>        Write-Progress -Activity "Tracking progress" -status  "$totalPercent% Complete:" -percentComplete $totalpercent</span></span>
+<span class="line"><span>        Start-Sleep 3</span></span>
+<span class="line"><span>        $provtask = Get-ProvTask -TaskId $provTaskId</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>    Write-Host "OK" -ForegroundColor Green</span></span>
+<span class="line"><span>    #Get the ProvisioningSchemeUid in ordre to add the VM(s) to the catalog</span></span>
+<span class="line"><span>    Write-Host "Getting Provisioning Scheme Uid... " -NoNewline</span></span>
+<span class="line"><span>    $ProvSchemeUid = (Get-ProvScheme -ProvisioningSchemeName $cat).ProvisioningSchemeUid.Guid</span></span>
+<span class="line"><span>    Write-Host "$ProvSchemeUid found" -ForeGroundColor Green</span></span>
+<span class="line"><span>    #Finding the catalog Ui to attached the VM(s) to</span></span>
+<span class="line"><span>    Write-Host "Finding Catalog's UId... " -NoNewline</span></span>
+<span class="line"><span>    $Uid = (Get-BrokerCatalog -Name $cat).Uid</span></span>
+<span class="line"><span>    Write-Host "$Uid found" -ForegroundColor Green</span></span>
+<span class="line"><span>    #Listing the newly created VM(s) in order to add to the catalog. "Brokered" tag means the VM is created but not attached</span></span>
+<span class="line"><span>    #We are listing those</span></span>
+<span class="line"><span>    $ProvVMS = Get-ProvVM -ProvisioningSchemeUid $ProvSchemeUid -MaxRecordCount 10000 | Where-Object {$_.Tag -ne "Brokered"}</span></span>
+<span class="line"><span>    Write-Host "Assigning newly created machines to $cat..."</span></span>
+<span class="line"><span>    Start-Sleep -Seconds 10 #Adding delay to avoid an error if the Delivery Controller has not up-to-date info (could require a few seconds sometime)</span></span>
+<span class="line"><span>    Foreach($VM in $ProvVMS){</span></span>
+<span class="line"><span>        $count++</span></span>
+<span class="line"><span>        $VMName = $VM.VMName</span></span>
+<span class="line"><span>        #Lock the VM to indicate the VM is used (assigned to a catalog)</span></span>
+<span class="line"><span>        Write-Host "Locking VM $VMName... " -NoNewline</span></span>
+<span class="line"><span>        Lock-ProvVM -ProvisioningSchemeName $cat -Tag "Brokered" -VMID @($VM.VMId) -ErrorAction Stop</span></span>
+<span class="line"><span>        Write-Host "OK" -ForegroundColor Green</span></span>
+<span class="line"><span>        #Adding the VM to the catalog</span></span>
+<span class="line"><span>        Write-Host "Adding VM $VMName to $cat catalog... " -NoNewline</span></span>
+<span class="line"><span>        New-BrokerMachine -Cataloguid $Uid -MachineName $VMName -ErrorAction Stop | Out-Null</span></span>
+<span class="line"><span>        Write-Host "OK" -ForegroundColor Green</span></span>
+<span class="line"><span>        #Adding the VM to the Delivery Group</span></span>
+<span class="line"><span>        Write-Host "Adding VM $VMName to $DeliveryGroup delivery group... " -NoNewline</span></span>
+<span class="line"><span>        Add-BrokerMachine -MachineName "$env:USERDOMAIN\$VMName" -DesktopGroup $DeliveryGroup -ErrorAction Stop </span></span>
+<span class="line"><span>        Write-host "OK" -ForegroundColor Green</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>    Write-Host "$count VDI created in $cat and attached to $DeliveryGroup!" -ForegroundColor Green</span></span>
+<span class="line"><span>    #Reset variables before next loop, just in case</span></span>
+<span class="line"><span>    $adAccounts = $null</span></span>
+<span class="line"><span>    $ProvVMS = $null</span></span>
+<span class="line"><span>    $count = $null</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>#Stop logging</span></span>
+<span class="line"><span>Stop-Transcript </span></span>
+<span class="line"><span></span></span></code></pre>  </div>  </article> </main> <div class="shrink-0 w-[280px] hidden md:block"> <div class="mb-4"> <div class="about-the-author py-4 border-b"> <h3 class="font-extrabold uppercase mb-4 text-sm">About the Author</h3> <div class="flex gap-4 items-center leading-tight not-prose"> <a href="https://github.com/slemonier" target="_blank" rel="noopener noreferrer" class="rounded-full overflow-hidden shrink-0 w-[70px] h-[70px]"> <img src="/_astro/ava.BXbwb2Mm_1aqOIG.webp" alt="Steven Lemonier" width="724" height="1086" loading="lazy" decoding="async"> </a> <div> <div> <a href="https://github.com/slemonier" class="block font-bold text-inherit hover:text-[var(--link-color)]" target="_blank" rel="noopener noreferrer">
+Steven Lemonier
+</a> </div> <small class="avatar__subtitle">System Engineer</small> </div> </div> <div class="author-desc text-[.825rem] my-4"> <p class="mb-3">
+Steven Lemonier is a System Engineer with extensive experience in Citrix Technologies, particularly DaaS, ADC/ADM and automation. He is actively sharing on   <a href="https://stevenlemonier.fr" target="_blank" class="underline">StevenLemonier.fr</a>.
+</p> <p>Certified as a CCE-V, he actively contributes to the World of EUC and serves as a Citrix Technology Advocate. He is enthusiastic about collaborating on projects involving Citrix technologies and is dedicated to fostering knowledge-sharing within the tech community.</p> <div class="flex"> <a class="p-3 dark:hidden" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/mastodon-mark.DOW7pcjC_ZiQ1Y7.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 hidden dark:block" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/mastodon-mark-white.1vPKc5T6_1xDUxn.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 dark:hidden" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/x-mark.B8UYXsYW_1Y4Mk2.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 hidden dark:block" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/x-mark-white.BH4tc0gU_1wSSrN.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 dark:hidden" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/github-mark.BwyJR_2w_Z1xtQRt.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 hidden dark:block" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/github-mark-white.S2fJVXLq_Z1Xebf3.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 dark:hidden" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/instagram-mark.Dwf86YqG_e2dgN.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 hidden dark:block" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/instagram-mark-white.DHEAU74k_Zb54zy.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 dark:hidden" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/linkedin-mark.CxdoPt54_EsYgh.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 hidden dark:block" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/linkedin-mark-white.B4kIcZne_22Sl4n.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 dark:hidden" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/rss-mark.yOoxdtkm_XDPhl.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 hidden dark:block" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/rss-mark-white.yB-N6eN0_qCtI.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> </div> </div> </div> </div> <nav class="toc sticky top-4 py-2 lg:-ml-3" data-astro-cid-awg4b4gg> <h3 class="font-extrabold uppercase mb-1 px-3 text-sm" data-astro-cid-awg4b4gg>On This Page</h3> <ul class="toc-list max-h-[calc(100vh-70px)] overflow-auto text-[.825rem] text-[var(--color-content-secondary)]" data-astro-cid-awg4b4gg>  </ul> </nav>  </div> </div>  </div> <footer class="container mt-8"> <div class="justify-center flex gap-4 py-8 prose dark:prose-invert text-sm"> <a class="p-3 dark:hidden" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/mastodon-mark.DOW7pcjC_ZiQ1Y7.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 hidden dark:block" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/mastodon-mark-white.1vPKc5T6_1xDUxn.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 dark:hidden" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/x-mark.B8UYXsYW_1Y4Mk2.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 hidden dark:block" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/x-mark-white.BH4tc0gU_1wSSrN.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 dark:hidden" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/github-mark.BwyJR_2w_Z1xtQRt.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 hidden dark:block" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/github-mark-white.S2fJVXLq_Z1Xebf3.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 dark:hidden" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/instagram-mark.Dwf86YqG_e2dgN.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 hidden dark:block" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/instagram-mark-white.DHEAU74k_Zb54zy.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 dark:hidden" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/linkedin-mark.CxdoPt54_EsYgh.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 hidden dark:block" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/linkedin-mark-white.B4kIcZne_22Sl4n.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 dark:hidden" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/rss-mark.yOoxdtkm_XDPhl.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 hidden dark:block" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/rss-mark-white.yB-N6eN0_qCtI.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> </div> <div class="py-4 border-t dark:border-t-zinc-700"> <div class="md:flex text-sm text-zinc-500 dark:text-zinc-300 prose dark:prose-invert justify-between"> <div>Copyright © 2024 Steven Lemonier</div> <!-- Please leave the credit if you dont make a significant changes to the template. It's just a nofollow link :)  --> <div>Template created by <a href="https://devaradise.com" target="_blank" rel="nofollow noopener">Syakir @ Devaradise</a> and adapted by Steven Lemonier</div> </div> </div> </footer> <!-- Google tag (gtag.js) -->  </body> </html> <script async>
+	const anchors = document.querySelectorAll('.prose h2[id], .prose h3[id]');
+	const links = document.querySelectorAll('nav.toc ul li a');
+
+	function observeToc() {
+		if (typeof anchors != 'undefined' && anchors != null && typeof links != 'undefined' && links != null) {
+			let scrollTop = window.scrollY;
+
+			// highlight the last scrolled-to: set everything inactive first
+			for (const link of links) {
+				link.classList.add('border-transparent', 'text-inherit');
+				link.classList.remove('bg-[var(--background-surface-color)]', 'border-[var(--soft-border-color)]', 'text-[var(--link-color)]');
+			}
+			// then iterate backwards, on the first match highlight it and break
+			for (var i = anchors.length - 1; i >= 0; i--) {
+				if (scrollTop > anchors[i].offsetTop - 80) {
+					links[i].classList.remove('border-transparent', 'text-inherit');
+					links[i].classList.add('bg-[var(--background-surface-color)]', 'border-[var(--soft-border-color)]', 'text-[var(--link-color)]');
+					break;
+				}
+			}
+		}
+	}
+
+	window.addEventListener('scroll', (event) => {
+		observeToc(event);
+	});
+	window.addEventListener('hashchange', (event) => {
+		observeToc(event);
+	});
+</script>

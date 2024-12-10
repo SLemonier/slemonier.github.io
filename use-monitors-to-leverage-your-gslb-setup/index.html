@@ -1,0 +1,232 @@
+<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/_astro/favicon.CpNGb_Q3.png"><meta name="generator" content="Astro v4.16.0"><!-- Canonical URL --><link rel="canonical" href="https://devolio.devaradise.com/use-monitors-to-leverage-your-gslb-setup/"><!-- Primary Meta Tags --><title>Use monitors to leverage your GSLB setup</title><meta name="title" content="Use monitors to leverage your GSLB setup"><meta name="description" content="Use monitors to leverage your GSLB setup."><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://devolio.devaradise.com/use-monitors-to-leverage-your-gslb-setup/"><meta property="og:title" content="Use monitors to leverage your GSLB setup"><meta property="og:description" content="Use monitors to leverage your GSLB setup."><meta property="og:image" content="https://devolio.devaradise.com/_astro/title_adc.BQu7idTh.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://devolio.devaradise.com/use-monitors-to-leverage-your-gslb-setup/"><meta property="twitter:title" content="Use monitors to leverage your GSLB setup"><meta property="twitter:description" content="Use monitors to leverage your GSLB setup."><meta property="twitter:image" content="https://devolio.devaradise.com/_astro/title_adc.BQu7idTh.png"><link rel="stylesheet" href="/_astro/_slug_.DwNs2Nve.css">
+<style>.toc-list[data-astro-cid-awg4b4gg]::-webkit-scrollbar{width:5px}.toc-list[data-astro-cid-awg4b4gg]::-webkit-scrollbar-track{background:transparent}.toc-list[data-astro-cid-awg4b4gg]::-webkit-scrollbar-thumb{background:#eee;border-radius:5px}.dark .toc-list[data-astro-cid-awg4b4gg]::-webkit-scrollbar-thumb{background:#2e2e2e;border-radius:5px}
+</style><script>!(function(w,p,f,c){if(!window.crossOriginIsolated && !navigator.serviceWorker) return;c=w[p]=Object.assign(w[p]||{},{"lib":"/~partytown/","debug":false});c[f]=(c[f]||[])})(window,'partytown','forward');/* Partytown 0.10.2 - MIT builder.io */
+const t={preserveBehavior:!1},e=e=>{if("string"==typeof e)return[e,t];const[n,r=t]=e;return[n,{...t,...r}]},n=Object.freeze((t=>{const e=new Set;let n=[];do{Object.getOwnPropertyNames(n).forEach((t=>{"function"==typeof n[t]&&e.add(t)}))}while((n=Object.getPrototypeOf(n))!==Object.prototype);return Array.from(e)})());!function(t,r,o,i,a,s,c,d,l,p,u=t,f){function h(){f||(f=1,"/"==(c=(s.lib||"/~partytown/")+(s.debug?"debug/":""))[0]&&(l=r.querySelectorAll('script[type="text/partytown"]'),i!=t?i.dispatchEvent(new CustomEvent("pt1",{detail:t})):(d=setTimeout(v,1e4),r.addEventListener("pt0",w),a?y(1):o.serviceWorker?o.serviceWorker.register(c+(s.swPath||"partytown-sw.js"),{scope:c}).then((function(t){t.active?y():t.installing&&t.installing.addEventListener("statechange",(function(t){"activated"==t.target.state&&y()}))}),console.error):v())))}function y(e){p=r.createElement(e?"script":"iframe"),t._pttab=Date.now(),e||(p.style.display="block",p.style.width="0",p.style.height="0",p.style.border="0",p.style.visibility="hidden",p.setAttribute("aria-hidden",!0)),p.src=c+"partytown-"+(e?"atomics.js?v=0.10.2":"sandbox-sw.html?"+t._pttab),r.querySelector(s.sandboxParent||"body").appendChild(p)}function v(n,o){for(w(),i==t&&(s.forward||[]).map((function(n){const[r]=e(n);delete t[r.split(".")[0]]})),n=0;n<l.length;n++)(o=r.createElement("script")).innerHTML=l[n].innerHTML,o.nonce=s.nonce,r.head.appendChild(o);p&&p.parentNode.removeChild(p)}function w(){clearTimeout(d)}s=t.partytown||{},i==t&&(s.forward||[]).map((function(r){const[o,{preserveBehavior:i}]=e(r);u=t,o.split(".").map((function(e,r,o){var a;u=u[o[r]]=r+1<o.length?u[o[r]]||(a=o[r+1],n.includes(a)?[]:{}):(()=>{let e=null;if(i){const{methodOrProperty:n,thisObject:r}=((t,e)=>{let n=t;for(let t=0;t<e.length-1;t+=1)n=n[e[t]];return{thisObject:n,methodOrProperty:e.length>0?n[e[e.length-1]]:void 0}})(t,o);"function"==typeof n&&(e=(...t)=>n.apply(r,...t))}return function(){let n;return e&&(n=e(arguments)),(t._ptf=t._ptf||[]).push(o,arguments),n}})()}))})),"complete"==r.readyState?h():(t.addEventListener("DOMContentLoaded",h),t.addEventListener("load",h))}(window,document,navigator,top,window.crossOriginIsolated);;(e=>{e.addEventListener("astro:before-swap",e=>{let r=document.body.querySelector("iframe[src*='/~partytown/']");if(r)e.newDocument.body.append(r)})})(document);</script></head> <body class="bg-white dark:bg-zinc-900 dark:text-zinc-100 pt-16 sm:pt-0"> <header id="site-header" class="flex items-center w-full transition duration-300 z-[999] border-[var(--soft-border-color)]"> <div class="container"> <nav class="flex gap-4 items-center justify-between py-3"> <h2 class="m-0"> <a href="/" class="flex gap-4 items-center text-xl font-black uppercase"> <!-- You can use your site logo, rounded ava or simply your site name here--> <img src="/_astro/small-ava.nMcaqXHj_Z1y66Kx.webp" alt="Your site name" class="rounded-full w-11 border-white border-2 shadow-lg" width="96" height="96" loading="lazy" decoding="async"> <!-- {SITE_TITLE} --> </a> </h2> <div class="flex"> <button class="p-3" id="themeToggle" aria-label="Theme mode"> <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg> <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"> <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg> </button> </div> </nav> <div class="fixed top-3 w-auto max-w-full px-3 left-1/2 -translate-x-1/2 z-[999]"> <div class="flex px-2.5 bg-white/90 dark:bg-zinc-900/75 backdrop-blur-md leading-tight rounded-full border dark:border-zinc-700"> <div class="px-2.5 text-sm"> <a href="/" class="py-3 flex items-center text-zinc-600 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-zinc-50" aria-label="Home">  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>  </a> </div> <div class="px-2.5 text-sm"> <a href="/about/" class="py-3 flex items-center text-zinc-600 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-zinc-50"> About </a> </div><div class="px-2.5 text-sm"> <a href="/posts/" class="py-3 flex items-center text-zinc-600 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-zinc-50"> Posts </a> </div><div class="px-2.5 text-sm"> <a href="/projects/" class="py-3 flex items-center text-zinc-600 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-zinc-50"> Projects </a> </div><div class="px-2.5 text-sm"> <a href="/tags/" class="py-3 flex items-center text-zinc-600 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-zinc-50"> Tags </a> </div> </div> </div> </div>  <script>
+		const theme = (() => {
+			if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				return 'dark';
+			}
+			if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+				return localStorage.getItem('theme');
+			}
+			return 'light';
+		})();
+
+		if (theme === 'light') {
+			document.documentElement.classList.remove('dark');
+		} else {
+			document.documentElement.classList.add('dark');
+		}
+
+		window.localStorage.setItem('theme', theme || '');
+
+		function sendMessage(message) {
+			const iframe = document.querySelector('iframe.giscus-frame');
+			if (!iframe) return;
+			iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+		}
+
+		const handleToggleClick = () => {
+			const element = document.documentElement;
+			element.classList.toggle('dark');
+
+			const isDark = element.classList.contains('dark');
+			if (isDark) {
+				sendMessage({
+					setConfig: {
+						theme: 'dark_dimmed'
+					}
+				});
+			} else {
+				sendMessage({
+					setConfig: {
+						theme: 'light'
+					}
+				});
+			}
+			localStorage.setItem('theme', isDark ? 'dark' : 'light');
+		};
+		document.getElementById('themeToggle')?.addEventListener('click', handleToggleClick);
+	</script> </header> <div class="py-8 min-h-[calc(100vh-160px)]">  <div class="container lg:flex gap-10"> <main class="overflow-hidden grow"> <article> <div class="prose dark:prose-invert
+  prose-h1:font-[900] prose-h1:my-4 prose-h1:text-2xl sm:prose-h1:text-[2rem]/[1.3]
+  prose-h2:mt-6 prose-h2:mb-3 prose-h2:text-2xl sm:prose-h2:text-3xl prose-h2:font-extrabold
+  prose-h3:mt-5 prose-h3:mb-2 prose-h3:text-xl sm:prose-h3:text-2xl
+  prose-h4:mt-3 prose-h4:mb-0 prose-img:rounded-xl prose-h3:target:pt-20">  <div> <h1 class="!my-1 leading-tight">Use monitors to leverage your GSLB setup</h1> <div class="text-sm font-[500] mt-2 sm:mt-0 py-1 md:text-right flex flex-col sm:flex-row gap-3 sm:justify-between sm:items-center"> <div class="flex gap-2"> <a class="border border-zinc-300 dark:border-zinc-700 rounded-2xl
+                          text-sm text-zinc-700 dark:text-zinc-300 no-underline px-2 py-0.5
+                          transition-all duration-700
+                        hover:border-zinc-700 dark:hover:border-zinc-300" href="/tags/citrix"> Citrix </a><a class="border border-zinc-300 dark:border-zinc-700 rounded-2xl
+                          text-sm text-zinc-700 dark:text-zinc-300 no-underline px-2 py-0.5
+                          transition-all duration-700
+                        hover:border-zinc-700 dark:hover:border-zinc-300" href="/tags/netscaler"> NetScaler </a><a class="border border-zinc-300 dark:border-zinc-700 rounded-2xl
+                          text-sm text-zinc-700 dark:text-zinc-300 no-underline px-2 py-0.5
+                          transition-all duration-700
+                        hover:border-zinc-700 dark:hover:border-zinc-300" href="/tags/gateway"> Gateway </a><a class="border border-zinc-300 dark:border-zinc-700 rounded-2xl
+                          text-sm text-zinc-700 dark:text-zinc-300 no-underline px-2 py-0.5
+                          transition-all duration-700
+                        hover:border-zinc-700 dark:hover:border-zinc-300" href="/tags/gslb"> GSLB </a> </div> <div> Updated on <strong><time datetime="2021-04-28T00:00:00.000Z"> Apr 28, 2021 </time></strong> </div> </div> </div> <div class="py-3 overflow-hidden"> <img src="/_astro/title_adc.BQu7idTh_1dyV8G.webp" class="rounded-3xl w-full m-0 lg:mb-2" alt="Use monitors to leverage your GSLB setup" loading="eager" width="3000" height="2250" decoding="async"> </div> <p>If you’re not familiar with Citrix ADC’s GSLB feature, let me summarize in a few words how this works and might help you with your deployment.</p>
+<p>Let’s assume you are a medium/large company spread across the globe, with several datacentres (for this example, we’ll have one in New York and another one in London), and you want to offer the best <strong>user experience</strong> to your employees, partners or consultants when they work remotely (in this demo, I’ll use Citrix published apps and desktops but it can be adapted to any resources you might need to publish externally through your ADC). To lower the latency, you don’t want someone working from Liverpool to be redirected to your New York datacentre, it should connect to your UK datacentre. But, you still want to be able to redirect this user in the US if your British datacentre has an outage.</p>
+<p>To route your users to the best location but also to minimize the impact of an issue and redirect them to any other datacentre, the GLSB may help you with this. Based on a specified mechanism, it knows where to route the users. You might want to use, among many other possibilities to use least response time (which doesn’t mean the first ADC to respond will be the one elected…), static proximity (meaning the user will be routed based on his geographical location).</p>
+<p>GSLB is a great mechanism offered by Citrix ADC.</p>
+<p>But it has caveat.</p>
+<p>In my example, I use round-robin to use both datacentres. Each time I do a request to my GSLB URL, I am redirected to the first one, the request after to the second one, then back to the first, and so on.</p>
+<p><img  src="/_astro/london-newyork-landing-page.DIZDpC5T_1YgHyi.webp" alt="Switching between New York and London each time..." title="Switching between New York and London each time..." width="2750" height="720" loading="lazy" decoding="async"></p>
+<p>Let’s say you want to use the GSLB to optimize the routing to your Citrix Gateways. The GSLB, by default, will consider New York’s Gateway as up as long as the gateway virtual server is responding on port 443 (if Gateway is hosted on another instance) or as long as the gateway virtual server is up (if hosted on the same instance).</p>
+<p>To have a gateway appearing as up, you need only two things: a valid SSL certificate bound to the virtual server and at least one STA up.
+What about the Storefront, the authentication server, DNS server, Desktop Delivery Controllers (might be different from the STA)? It is not part of the virtual server status evaluation.</p>
+<p>In my example, my storefront server is down…</p>
+<p><img  src="/_astro/storefront-down.k1AA63rt_1YOu0G.webp" alt="...even if London&#38;#x27;s Gateway is not working" title="...even if London&#38;#x27;s Gateway is not working" width="1361" height="721" loading="lazy" decoding="async"></p>
+<p>… but I’m still redirected in London, ending with a login failure (and a frustrated user).</p>
+<p>You don’t want to route a user to a location where it would be unable to logon, or launch any resources if you use GSLB. Remember, <strong>user experience is key</strong>.</p>
+<p>To be fair, it’s not a GSLB limitation, but a Citrix Gateway one.</p>
+<p>Thankfully, we can add monitors to the GSLB setup to leverage the feature and be able to route efficiently the users where we want and prevent them to connect to a faulty datacentre.</p>
+<p>But it requires some work.</p>
+<p>In my example, I will use the following deployment.</p>
+<p><img  src="/_astro/lab-setup.CaBfuMRj_22X7jd.webp" alt="Lab setup" title="Lab setup" width="962" height="626" loading="lazy" decoding="async"></p>
+<p>I assume your GSLB configuration is already set up and works like a charm.</p>
+<p><img  src="/_astro/gslb-up-running.CFPvYQ4g_Z21t182.webp" alt="GSLB is up and running" title="GSLB is up and running" width="821" height="64" loading="lazy" decoding="async"></p>
+<p>I will add monitors to the following resources:</p>
+<ul>
+<li>DNS server(s)</li>
+<li>Authentication server(s), here an Active Directory server</li>
+<li>Storefront server(s)</li>
+<li>Delivery Controller(s)</li>
+</ul>
+<p>You might want to add another one(s), specially if you use two-factor authentication, or use a different one(s) depending on your deployment (like RD Gateway).</p>
+<p>As long as you understood how to proceed with one monitor, you’ll be able to adapt to your configuration.</p>
+<p>To configure monitors, you’ll need as many IP addresses as services you’ll need to monitor because we’ll have to set up load balancing virtual servers.</p>
+<p>Why just simply bind multiple monitors for the same service? Because a monitor can only target one IP address. It means you’ll need to bind two different monitors, each one targeting one storefront server. But in case one of them goes down, the GSLB site will be considered as down, which is incorrect.</p>
+<p><img  src="/_astro/one-storefront-down.D0nSjas8_w4klD.webp" alt="One Storefront server is down..." title="One Storefront server is down..." width="934" height="360" loading="lazy" decoding="async"></p>
+<p><img  src="/_astro/newyork-gslb-down.C62PnLuH_Z1ohaje.webp" alt="... so the NY GSLB site is down, even if one Storefront is still available" title="... so the NY GSLB site is down, even if one Storefront is still available" width="970" height="95" loading="lazy" decoding="async"></p>
+<p>Now, it’s time to work.</p>
+<p><strong>As usual, try this in a safe environment first and adapt the configuration to your deployment.</strong></p>
+<p>First, let’s configure each Load Balancing Virtual server in New York datacentre. You might want to use one IP address for different services, depending on the number of IP addresses you can get. It is really up to you but I recommend dedicating an address to one service.</p>
+<p>I’ll detail everything for the DNS and then, you’ll have all the commands with few comments depending on the service.</p>
+<ol>
+<li>Add a Load Balancing Virtual server using the IP address 192.168.100.202</li>
+</ol>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add lb vserver NY-LB-DNS DNS 192.168.100.202 53 -persistenceType NONE -cltTimeout 120</span></span>
+<span class="line"><span></span></span></code></pre>
+<ol start="2">
+<li>Add your internal DNS server (mine is named NY-DNS01 and has 192.168.200.1 set as its IP address)</li>
+</ol>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add server NY-DNS01 192.168.200.1</span></span>
+<span class="line"><span></span></span></code></pre>
+<ol start="3">
+<li>Create the Load Balancing service group</li>
+</ol>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add serviceGroup NY-LB_svcg-DNS DNS -maxClient 0 -maxReq 0 -cip DISABLED -usip NO -useproxyport NO -cltTimeout 120 -svrTimeout 120 -CKA NO -TCPB NO -CMP NO</span></span>
+<span class="line"><span></span></span></code></pre>
+<ol start="4">
+<li>Bind your DNS server to the Load Balancing service group</li>
+</ol>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>bind serviceGroup NY-LB_svcg-DNS NY-DNS01 53</span></span>
+<span class="line"><span></span></span></code></pre>
+<ol start="5">
+<li>Bind your service group with your Load Balancing virtual server</li>
+</ol>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>bind lb vserver NY-DNS NY-LB_svcg-DNS</span></span>
+<span class="line"><span></span></span></code></pre>
+<ol start="6">
+<li>(Repeat step 2 and 4 for each DNS server you want to use in your Load Balancing virtual server)</li>
+</ol>
+<p><img  src="/_astro/lb-dns-up.Go-NjUj1_ZtpojG.webp" alt="Now you have DNS LB virtual server" title="Now you have a DNS LB virtual server" width="959" height="32" loading="lazy" decoding="async"></p>
+<p>Let’s create a LB virtual server for LDAP (I won’t create a new server and will re-use the DNS one, both services are hosted on the same server in my lab - 192.168.100.1). Note I use LDAP in my lab, it is highly recommended to use LDAPS instead in your production environment.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add lb vserver NY-LB-NYAP TCP 192.168.100.203 389 -persistenceType NONE -cltTimeout 9000</span></span>
+<span class="line"><span>add serviceGroup NY-LB_svcg-LDAP TCP -maxClient 0 -maxReq 0 -cip DISABLED -usip NO -useproxyport YES -cltTimeout 9000 -svrTimeout 9000 -CKA NO -TCPB NO -CMP NO</span></span>
+<span class="line"><span>bind serviceGroup NY-LB_svcg-LDAP NY-DNS01 389</span></span>
+<span class="line"><span>bind lb vserver NY-LB-LDAP NY-LB_svcg-LDAP</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>Now, it’s up to Storefront LB virtual server. Again, I use HTTP in my lab, use HTTPS in your production environment.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add lb vserver NY-LB-SF HTTP 192.168.100.204 80 -persistenceType NONE -cltTimeout 180</span></span>
+<span class="line"><span>add server NY-SF01 192.168.100.3</span></span>
+<span class="line"><span>add serviceGroup NY-LB_svcg-SF HTTP -maxClient 0 -maxReq 0 -cip DISABLED -usip NO -useproxyport YES -cltTimeout 180 -svrTimeout 360 -CKA NO -TCPB NO -CMP NO</span></span>
+<span class="line"><span>bind serviceGroup NY-LB_svcg-SF NY-SF01 80</span></span>
+<span class="line"><span>bind lb vserver NY-LB-SF NY-LB_svcg-SF</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>And Finally, Delivery Controllers LB virtual server. You know the story, HTTP/HTTPS, lab/production…</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add lb vserver NY-LB-DDC TCP 192.168.100.205 80 -persistenceType NONE -cltTimeout 9000</span></span>
+<span class="line"><span>add server NY-DDC01 192.168.100.6</span></span>
+<span class="line"><span>add serviceGroup NY-LB_svcg-DDC TCP -maxClient 0 -maxReq 0 -cip DISABLED -usip NO -useproxyport YES -cltTimeout 9000 -svrTimeout 9000 -CKA NO -TCPB NO -CMP NO</span></span>
+<span class="line"><span>bind serviceGroup NY-LB_svcg-DDC NY-DDC01 80</span></span>
+<span class="line"><span>bind lb vserver NY-LB-DDC NY-LB_svcg-DDC</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>Now, you should have all your Load Balancing virtual servers up and running.</p>
+<p><img  src="/_astro/all-lb-vservers-up.CbewgFZH_1T4dVl.webp" alt="First step is completed!" title="First step is completed!" width="966" height="120" loading="lazy" decoding="async"></p>
+<p>Reproduce the same configuration (with specific IP addresses, of course!) in your other datacentre. In my case, I did it in London.</p>
+<p><img  src="/_astro/lb-storefront-down.B2bZn1nQ_v4pm7.webp" alt="Yep, Storefront is down, I told you..." title="Yep, Storefront is down, I told you..." width="977" height="114" loading="lazy" decoding="async"></p>
+<p>Now, it’s time to create the monitors and bind them to the GSLB site. ADC has great monitors ready to be used to check everything works as expected.
+For DNS monitor, we’ll do a query for an FQDN (sf01.ny.local) and expect a specific answer (192.168.100.3) and we’ll ask our DNS load balancing virtual server (192.168.100.202) on the DNS port (53).</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add lb monitor NY-DNS DNS -query sf01.NY.local -queryType Address -LRTM DISABLED -destIP 192.168.100.202 -destPort 53 -IPAddress 192.168.100.3</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>Then we attach the monitor to our GSLB site.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>bind gslb service remote.stevenlemonier.fr-NY -monitorName NY-DNS</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>For LDAP, there is an LDAP query, using credentials, here in plain text but would appear encrypted in the ns.conf then. It just expects to get a correct answer from your Active Directory server.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add lb monitor NY-LDAP LDAP -scriptName nsNYap.pl -dispatcherIP 127.0.0.1 -dispatcherPort 3013 -password MyS3cuR3P@ssw0rd -LRTM DISABLED -destIP 192.168.100.203 -destPort 389 -baseDN "DC=NY,DC=local" -bindDN sleadm@NY.local -filter cn=builtin</span></span>
+<span class="line"><span>bind gslb service remote.stevenlemonier.fr-NY -monitorName NY-LDAP</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>Storefront has also a dedicated monitor (isn’t that great, huh?). It will try to reach a store name (“store” like in /Citrix/“Store”) on your load balancing virtual server.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add lb monitor NY-SF STOREFRONT -scriptName nssf.pl -dispatcherIP 127.0.0.1 -dispatcherPort 3013 -LRTM DISABLED -destIP 192.168.100.204 -destPort 80 -storename store</span></span>
+<span class="line"><span>bind gslb service remote.stevenlemonier.fr-NY -monitorName NY-SF</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>Guess what… Yep, there is one for Desktop Delivery Controller as well (I really enjoy well-designed stuff like this).</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>add lb monitor NY-DDC CITRIX-XD-DDC -LRTM DISABLED -destIP 192.168.100.205 -destPort 80</span></span>
+<span class="line"><span>bind gslb service remote.stevenlemonier.fr-NY -monitorName NY-DDC</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>🥵 Okay, we are reaching the end. Let’s do a GSLB synchronization to spread our monitors across our deployment.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>shell nsgslbautosync config -nowarn</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>And then, let’s check our GSLB services status on New York ADC.</p>
+<p><img  src="/_astro/gslb-ny-status.C9ixrdX__2d2mgg.webp" alt="New York is UP and has 4 monitors bound 🤗" title="New York is UP and has 4 monitors bound 🤗" width="1037" height="386" loading="lazy" decoding="async"></p>
+<p>What if we check from London…</p>
+<p><img  src="/_astro/gslb-london-status.B2MyF6J3_iFCcD.webp" alt="It is seen as DOWN from the other GSLB Site..." title="It is seen as DOWN from the other GSLB Site..." width="950" height="29" loading="lazy" decoding="async"></p>
+<p>It appears as down. As expected.</p>
+<p>Wait. What?</p>
+<p><img  src="/_astro/lb-vservers-london-down.DGnoxbDp_Z1dnn76.webp" alt="All monitors are failing from London" title="All monitors are failing from London" width="913" height="180" loading="lazy" decoding="async"></p>
+<p>Yep, this is expected. Let me explain.</p>
+<p>As soon as you start to use monitors and bound them to a GSLB Service, these monitors are created on the other GSLB Services hosted on your other GSLB Site. But they still point to the same IP addresses… which are probably not reachable by all your ADC.</p>
+<p>In my case, I use 192.168.100.0 for New York and 192.168.200.0 for London. My ADCs are in two-arms mode, one on Internet, one on its datacentre’s LAN. But they do not communicate with the other datacentre. New York and London are sealed.</p>
+<p>I did that to highlight a disadvantage of this setup: <strong>each GSLB site has to communicate with all the IP addresses the monitors are pointing to, meaning your Load Balancing virtual servers.</strong></p>
+<p>It’s the limitation of using the monitors. The ADC won’t trust the other GSLB site regarding the status and will run its own monitor to check the availability of the services. Is it good or is it bad, I don’t know. I think the monitors should be site’s specific but Citrix implemented it that way for a purpose, I guess.</p>
+<p>But don’t worry, more likely, your datacentres are not sealed like in my lab and would probably communicate with each other. If not, it could be only a matter of firewall rules or network routes, nothing too hard to tackle. 😊</p>
+<p>After setting a three-arms mode on my ADC, they are able to use the monitors properly.</p>
+<p><img  src="/_astro/ny-monitors-up-from-london.CKXKMZxs_Z2hBPAN.webp" alt="NY monitors seen as UP from LD" title="NY monitors seen as UP from LD" width="832" height="168" loading="lazy" decoding="async"></p>
+<p><img  src="/_astro/london-lb-storefront-down-from-ny.BOhci8rt_16nD2.webp" alt="London Storefront server seen as DOWN from NY" title="London Storefront server seen as DOWN from NY" width="829" height="166" loading="lazy" decoding="async"></p>
+<p>From now on, users from the UK won’t be redirected to London as one of the services involved in the Gateway is faulty, instead, they’ll connect to New York until the service is restored in the other datacentre. And that is great!</p>
+<p><img  src="/_astro/gslb-is-working.Djy6vwAy_Z1z7XKa.webp" alt="As Storefront server is DOWN in London, users are redirected to New York, thanks to the GSLB" title="As Storefront server is DOWN in London, users are redirected to New York, thanks to the GSLB" width="1362" height="719" loading="lazy" decoding="async"></p>
+<p>In conclusion, with the monitors, we just improved the GSLB setup. Its first purpose was to improve the user experience by routing them to the best location (based on the chosen mechanism: least response time, static proximity, etc.) no matter resources availability but now, users won’t be redirected to a faulty datacentre.</p>
+<p>Remember, however, you might need to work to allow your ADC to communicate with your load balancing servers to monitor them properly but the improvement for your users is worth it.</p>  </div>  </article> </main> <div class="shrink-0 w-[280px] hidden md:block"> <div class="mb-4"> <div class="about-the-author py-4 border-b"> <h3 class="font-extrabold uppercase mb-4 text-sm">About the Author</h3> <div class="flex gap-4 items-center leading-tight not-prose"> <a href="https://github.com/slemonier" target="_blank" rel="noopener noreferrer" class="rounded-full overflow-hidden shrink-0 w-[70px] h-[70px]"> <img src="/_astro/ava.BXbwb2Mm_1aqOIG.webp" alt="Steven Lemonier" width="724" height="1086" loading="lazy" decoding="async"> </a> <div> <div> <a href="https://github.com/slemonier" class="block font-bold text-inherit hover:text-[var(--link-color)]" target="_blank" rel="noopener noreferrer">
+Steven Lemonier
+</a> </div> <small class="avatar__subtitle">System Engineer</small> </div> </div> <div class="author-desc text-[.825rem] my-4"> <p class="mb-3">
+Steven Lemonier is a System Engineer with extensive experience in Citrix Technologies, particularly DaaS, ADC/ADM and automation. He is actively sharing on   <a href="https://stevenlemonier.fr" target="_blank" class="underline">StevenLemonier.fr</a>.
+</p> <p>Certified as a CCE-V, he actively contributes to the World of EUC and serves as a Citrix Technology Advocate. He is enthusiastic about collaborating on projects involving Citrix technologies and is dedicated to fostering knowledge-sharing within the tech community.</p> <div class="flex"> <a class="p-3 dark:hidden" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/mastodon-mark.DOW7pcjC_ZiQ1Y7.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 hidden dark:block" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/mastodon-mark-white.1vPKc5T6_1xDUxn.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 dark:hidden" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/x-mark.B8UYXsYW_1Y4Mk2.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 hidden dark:block" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/x-mark-white.BH4tc0gU_1wSSrN.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 dark:hidden" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/github-mark.BwyJR_2w_Z1xtQRt.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 hidden dark:block" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/github-mark-white.S2fJVXLq_Z1Xebf3.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 dark:hidden" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/instagram-mark.Dwf86YqG_e2dgN.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 hidden dark:block" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/instagram-mark-white.DHEAU74k_Zb54zy.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 dark:hidden" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/linkedin-mark.CxdoPt54_EsYgh.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 hidden dark:block" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/linkedin-mark-white.B4kIcZne_22Sl4n.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 dark:hidden" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/rss-mark.yOoxdtkm_XDPhl.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 hidden dark:block" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/rss-mark-white.yB-N6eN0_qCtI.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> </div> </div> </div> </div> <nav class="toc sticky top-4 py-2 lg:-ml-3" data-astro-cid-awg4b4gg> <h3 class="font-extrabold uppercase mb-1 px-3 text-sm" data-astro-cid-awg4b4gg>On This Page</h3> <ul class="toc-list max-h-[calc(100vh-70px)] overflow-auto text-[.825rem] text-[var(--color-content-secondary)]" data-astro-cid-awg4b4gg>  </ul> </nav>  </div> </div>  </div> <footer class="container mt-8"> <div class="justify-center flex gap-4 py-8 prose dark:prose-invert text-sm"> <a class="p-3 dark:hidden" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/mastodon-mark.DOW7pcjC_ZiQ1Y7.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 hidden dark:block" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/mastodon-mark-white.1vPKc5T6_1xDUxn.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 dark:hidden" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/x-mark.B8UYXsYW_1Y4Mk2.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 hidden dark:block" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/x-mark-white.BH4tc0gU_1wSSrN.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 dark:hidden" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/github-mark.BwyJR_2w_Z1xtQRt.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 hidden dark:block" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/github-mark-white.S2fJVXLq_Z1Xebf3.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 dark:hidden" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/instagram-mark.Dwf86YqG_e2dgN.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 hidden dark:block" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/instagram-mark-white.DHEAU74k_Zb54zy.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 dark:hidden" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/linkedin-mark.CxdoPt54_EsYgh.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 hidden dark:block" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/linkedin-mark-white.B4kIcZne_22Sl4n.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 dark:hidden" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/rss-mark.yOoxdtkm_XDPhl.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> <a class="p-3 hidden dark:block" href="https://github.com/devaradise/devolio" target="_blank"><img src="/_astro/rss-mark-white.yB-N6eN0_qCtI.svg" alt="Github logo" width="24" height="24" loading="lazy" decoding="async"></a> </div> <div class="py-4 border-t dark:border-t-zinc-700"> <div class="md:flex text-sm text-zinc-500 dark:text-zinc-300 prose dark:prose-invert justify-between"> <div>Copyright © 2024 Steven Lemonier</div> <!-- Please leave the credit if you dont make a significant changes to the template. It's just a nofollow link :)  --> <div>Template created by <a href="https://devaradise.com" target="_blank" rel="nofollow noopener">Syakir @ Devaradise</a> and adapted by Steven Lemonier</div> </div> </div> </footer> <!-- Google tag (gtag.js) -->  </body> </html> <script async>
+	const anchors = document.querySelectorAll('.prose h2[id], .prose h3[id]');
+	const links = document.querySelectorAll('nav.toc ul li a');
+
+	function observeToc() {
+		if (typeof anchors != 'undefined' && anchors != null && typeof links != 'undefined' && links != null) {
+			let scrollTop = window.scrollY;
+
+			// highlight the last scrolled-to: set everything inactive first
+			for (const link of links) {
+				link.classList.add('border-transparent', 'text-inherit');
+				link.classList.remove('bg-[var(--background-surface-color)]', 'border-[var(--soft-border-color)]', 'text-[var(--link-color)]');
+			}
+			// then iterate backwards, on the first match highlight it and break
+			for (var i = anchors.length - 1; i >= 0; i--) {
+				if (scrollTop > anchors[i].offsetTop - 80) {
+					links[i].classList.remove('border-transparent', 'text-inherit');
+					links[i].classList.add('bg-[var(--background-surface-color)]', 'border-[var(--soft-border-color)]', 'text-[var(--link-color)]');
+					break;
+				}
+			}
+		}
+	}
+
+	window.addEventListener('scroll', (event) => {
+		observeToc(event);
+	});
+	window.addEventListener('hashchange', (event) => {
+		observeToc(event);
+	});
+</script>
